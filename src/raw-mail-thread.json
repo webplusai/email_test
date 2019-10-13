@@ -1,0 +1,166 @@
+{
+  "$": {
+    "ThreadId": "1879054605"
+  },
+  "Mail": [
+    {
+      "$": {
+        "MailId": "1879054605"
+      },
+      "InRefTo": [
+        {
+          "$": {
+            "MailId": "1879054605"
+          }
+        }
+      ],
+      "Replies": [
+        {
+          "Mail": [
+            {
+              "$": {
+                "MailId": "1879054635"
+              },
+              "InRefTo": [
+                {
+                  "$": {
+                    "MailId": "1879054635"
+                  }
+                }
+              ],
+              "Replies": [
+                {
+                  "Mail": [
+                    {
+                      "$": {
+                        "MailId": "1879054638"
+                      },
+                      "InRefTo": [
+                        {
+                          "$": {
+                            "MailId": "1879054638"
+                          }
+                        }
+                      ],
+                      "Replies": [
+                        {
+                          "Mail": [
+                            {
+                              "$": {
+                                "MailId": "1879061584"
+                              },
+                              "InRefTo": [
+                                {
+                                  "$": {
+                                    "MailId": "1879054638"
+                                  }
+                                }
+                              ],
+                              "ReplyType": [
+                                "REPLY"
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "ReplyType": [
+                        "REPLY"
+                      ]
+                    },
+                    {
+                      "$": {
+                        "MailId": "1879054660"
+                      },
+                      "InRefTo": [
+                        {
+                          "$": {
+                            "MailId": "1879054660"
+                          }
+                        }
+                      ],
+                      "ReplyType": [
+                        "FORWARD"
+                      ]
+                    },
+                    {
+                      "$": {
+                        "MailId": "1879054689"
+                      },
+                      "InRefTo": [
+                        {
+                          "$": {
+                            "MailId": "1879054635"
+                          }
+                        }
+                      ],
+                      "ReplyType": [
+                        "REPLY"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "ReplyType": [
+                "REPLY"
+              ]
+            },
+            {
+              "$": {
+                "MailId": "1879054666"
+              },
+              "InRefTo": [
+                {
+                  "$": {
+                    "MailId": "1879054605"
+                  }
+                }
+              ],
+              "ReplyType": [
+                "REPLY"
+              ]
+            },
+            {
+              "$": {
+                "MailId": "1879061581"
+              },
+              "InRefTo": [
+                {
+                  "$": {
+                    "MailId": "1879054605"
+                  }
+                }
+              ],
+              "Replies": [
+                {
+                  "Mail": [
+                    {
+                      "$": {
+                        "MailId": "1879061583"
+                      },
+                      "InRefTo": [
+                        {
+                          "$": {
+                            "MailId": "1879054605"
+                          }
+                        }
+                      ],
+                      "ReplyType": [
+                        "REPLY"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "ReplyType": [
+                "REPLY"
+              ]
+            }
+          ]
+        }
+      ],
+      "ReplyType": [
+        "NEVER_RESPONDED"
+      ]
+    }
+  ]
+}

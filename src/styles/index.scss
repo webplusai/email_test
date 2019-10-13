@@ -1,0 +1,191 @@
+$dark-1: #111;
+$dark-2: #222;
+$blue-1: #55d;
+$blue-2: #88f;
+$brown-1: #f86c1b;
+
+$body-color: #BBB;
+
+$main-bg: $dark-1;
+$main-highlight: $dark-2;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 24px;
+  color: $body-color;
+  font-family: sans-serif;
+  background: $main-bg;
+  margin: 0;
+}
+
+#output {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .header {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    & > div {
+      padding: 5px 0;
+    }
+    &-meta {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $body-color;
+      @media (max-width: 576px) {
+        flex-direction: column;
+        &-item {
+          margin-bottom: 10px;
+        }
+      }
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    &-title {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid $body-color;
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      &-item {
+        display: flex;
+        width: 100%;
+        &-title {
+          width: 30%;
+        }
+        &-input {
+          width: 70%;
+          background: transparent;
+          border: none;
+          font-size: 20px;
+          color: $body-color;
+        }
+      }
+    }
+  }
+  .attachments {
+    display: flex;
+    flex-direction: column;
+    &-section {
+      display: flex;
+      flex-direction: column;
+      &-header {
+        display: flex;
+        width: 100%;
+        background: $main-highlight;
+        padding: 5px;
+        &-count {
+          color: $blue-1;
+          margin-left: 4px;
+        }
+      }
+      &-content {
+        padding: 10px 20px;
+        &-legends {
+          display: flex;
+          padding: 0 5px;
+          margin-bottom: 5px;
+          & > div {
+            padding: 5px;
+            border: 1px solid $body-color;
+            border-radius: 4px;
+            width: fit-content;
+            cursor: pointer;
+            margin-right: 5px;
+          }
+        }
+        &-table {
+          width: 100%;
+          text-align: left;
+          border-collapse: collapse;
+          tr:first-child {
+            background: $dark-2;
+          }
+          tr th, tr td {
+            border: 1px solid $body-color;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+  .message {
+    width: 100%;
+    &-header {
+      display: flex;
+      width: 100%;
+      background: $main-highlight;
+      padding: 5px;
+    }
+    &-body {
+      width: 100%;
+      padding: 5px 10px;
+      display: flex;
+      justify-content: space-between;
+      &-content {
+        margin: 0;
+        max-width: 70%;
+      }
+      &-info {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        span {
+          text-align: right;
+        }
+      }
+    }
+  }
+  .footer {
+    margin-top: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    &-contact {
+      display: flex;
+      padding: 10px 0;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        .footer-contact-title {
+          font-weight: bold;
+          color: $blue-2;
+        }
+        .footer-contact-subtitle {
+          font-weight: bold;
+          color: $brown-1;
+        }
+      }
+      &-personal {
+        width: 30%;
+        padding-right: 10px;
+        border-right: 1px solid $brown-1;
+      }
+      &-vendor {
+        margin-left: 5px;
+        &-detail {
+          margin-top: 10px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+    &-privacy {
+      font-size: 20px;
+      border-top: 1px solid $body-color;
+      padding-top: 3px;
+    }
+  }
+}

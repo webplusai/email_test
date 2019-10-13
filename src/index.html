@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EmailManagement</title>
+</head>
+<body>
+<div id="content">
+  <script id="email-template" type="text/x-mustache-template">
+    <div class="header">
+      <div class="header-meta">
+        {{#header.metas}}
+        <div class="header-meta-item">
+          <span class="header-meta-item-title">{{title}}</span>
+          <span class="header-meta-item-subtitle">{{subtitle}}</span>
+        </div>
+        {{/header.metas}}
+      </div>
+      <div class="header-title">
+        <span class="header-title-title">{{header.title}}</span>
+      </div>
+      <div class="header-info">
+        {{#header.info}}
+        <div class="header-info-item">
+          <span class="header-info-item-title">{{title}}</span>
+          <input type="text" class="header-info-item-input" value="{{value}}"/>
+        </div>
+        {{/header.info}}
+      </div>
+    </div>
+    <div class="attachments">
+      {{#attachments.numberOfFiles}}
+      <div class="attachment-section">
+        <div class="attachments-section-header">
+          <span class="attachments-section-header-title">FILE ATTACHMENTS</span>
+          <span class="attachments-section-header-count">({{attachments.numberOfFiles}})</span>
+        </div>
+        <div class="attachments-section-content">
+          <div class="attachments-section-content-legends">
+            <div class="attachments-section-content-legends-button">
+              <span>Zip Download</span>
+            </div>
+          </div>
+          <table class="attachments-section-content-table">
+            <tr>
+              <th>File Name</th>
+            </tr>
+            {{#attachments.files}}
+            <tr>
+              <td>{{name}}</td>
+            </tr>
+            {{/attachments.files}}
+          </table>
+        </div>
+      </div>
+      {{/attachments.numberOfFiles}}
+      {{#attachments.numberOfMails}}
+      <div class="attachment-section">
+        <div class="attachments-section-header">
+          <span class="attachments-section-header-title">MAIL ATTACHMENTS</span>
+          <span class="attachments-section-header-count">({{attachments.numberOfMails}})</span>
+        </div>
+        <div class="attachments-section-content">
+          <table class="attachments-section-content-table">
+            <tr>
+              <th>Mail Number</th>
+              <th>Subject</th>
+              <th>From</th>
+              <th>Sent</th>
+            </tr>
+            {{#attachments.mails}}
+            <tr>
+              <td>{{number}}</td>
+              <td>{{subject}}</td>
+              <td>{{from}}</td>
+              <td>{{sent}}</td>
+            </tr>
+            {{/attachments.mails}}
+          </table>
+        </div>
+      </div>
+      {{/attachments.numberOfMails}}
+      {{#attachments.numberOfDocs}}
+      <div class="attachment-section">
+        <div class="attachments-section-header">
+          <span class="attachments-section-header-title">DOCUMENT ATTACHMENTS</span>
+          <span class="attachments-section-header-count">({{attachments.numberOfDocs}})</span>
+        </div>
+        <div class="attachments-section-content">
+          <div class="attachments-section-content-legends">
+            <div class="attachments-section-content-legends-button">
+              <span>Download</span>
+            </div>
+            <div class="attachments-section-content-legends-button">
+              <span>Actions</span>
+            </div>
+            <div class="attachments-section-content-legends-button">
+              <span>View File Properties</span>
+            </div>
+          </div>
+          <table class="attachments-section-content-table">
+            <tr>
+              <th>File</th>
+              <th>Document No</th>
+              <th>Revision</th>
+              <th>Revision Date</th>
+              <th>Title</th>
+              <th>Status</th>
+            </tr>
+            {{#attachments.docs}}
+            <tr>
+              <td>{{file}}</td>
+              <td>{{number}}</td>
+              <td>{{revision}}</td>
+              <td>{{revisionDate}}</td>
+              <td>{{title}}</td>
+              <td>{{status}}</td>
+            </tr>
+            {{/attachments.docs}}
+          </table>
+        </div>
+      </div>
+      {{/attachments.numberOfDocs}}
+    </div>
+    <div class="message">
+      <div class="message-header">
+        <span class="message-header-title">MESSAGE</span>
+      </div>
+      <div class="message-body">
+        <p class="message-body-content">Hello Test US</p>
+        <div class="message-body-info">
+          <span>Mail manually registered</span>
+          <span>by Mr Patrick O'Leary</span>
+          <span>on 12/09/2012 5:47:47 PM AEST</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-contact">
+        <div class="footer-contact-personal">
+          <span class="footer-contact-title">
+            Nate Harrison
+          </span>
+          <span class="footer-contact-subtitle">
+            Business Analyst
+          </span>
+        </div>
+        <div class="footer-contact-vendor">
+          <span class="footer-contact-title">
+            Aconex
+          </span>
+          <span class="footer-contact-subtitle">
+            Project success, Easy as Aconex.
+          </span>
+          <div class="footer-contact-vendor-detail">
+            <span>
+              696 Bourke Street, Melbourne, Victoria 3000, Australia
+            </span>
+            <span>
+              Tel: +61 3 9240 0200   Fax: +61 3 9240 0299
+            </span>
+            <div class="footer-contact-detail-email">
+              <span>Email:</span>
+              <span class="footer-contact-detail-email-address">
+                nharrison@aconex.com  www.aconex.com
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-privacy">
+        <span>
+          This email and any attachments are confidential, subject to copyright and may be privileged.
+          No confidentiality or priviledge is lost by an erroneous transmission.
+          If you have received this email in error, please let us know by reply email and delete or destroy this email and all copies.
+          If you are not the intended recipient of this email you must not disseminate, copy or use the information in it.
+        </span>
+      </div>
+    </div>
+  </script>
+  <div id="output"></div>
+</div>
+</body>
+</html>
